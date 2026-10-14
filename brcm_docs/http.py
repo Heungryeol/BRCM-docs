@@ -110,7 +110,8 @@ class Fetcher:
     # ------------------------------------------------------------------ GET
     def _raw(self, url: str) -> Resp:
         req = urllib.request.Request(quote_url(url), headers={
-            "User-Agent": self.ua, "Accept-Language": "en-US,en;q=0.8", "Accept-Encoding": "identity"})
+            "User-Agent": self.ua, "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "Accept-Language": "en-US,en;q=0.8", "Accept-Encoding": "identity"})
         try:
             with urllib.request.urlopen(req, timeout=self.timeout) as r:
                 data = r.read(self.max_bytes + 1)
