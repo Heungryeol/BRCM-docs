@@ -1,0 +1,10 @@
+[Unit]
+Description=brcm-docs weekly crawl (Sat 01:00)
+
+[Timer]
+OnCalendar=Sat *-*-* 01:00:00
+Persistent=true
+RandomizedDelaySec=30m
+
+[Install]
+WantedBy=timers.target

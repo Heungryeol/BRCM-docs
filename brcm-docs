@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# brcm-docs 실행 래퍼:  ./brcm-docs <명령> ...   (./brcm-docs -h)
+DIR="$(dirname "$(readlink -f "$0")")"
+exec env PYTHONPATH="$DIR${PYTHONPATH:+:$PYTHONPATH}" python3 -m brcm_docs "$@"

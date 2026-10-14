@@ -1,0 +1,15 @@
+# 주간 증분 수집 (바뀐 문서만 다시 받음) — /opt/brcm-docs 에 설치했다고 가정
+#   cp scripts/systemd/brcm-docs.* /etc/systemd/system/ && systemctl daemon-reload
+#   systemctl enable --now brcm-docs.timer
+[Unit]
+Description=brcm-docs incremental crawl
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/brcm-docs
+ExecStart=/opt/brcm-docs/brcm-docs crawl --hours 20
+KillSignal=SIGTERM
+TimeoutStopSec=120
+Nice=10
