@@ -37,7 +37,7 @@ Broadcom VMware 문서 수집기 — **Broadcom KB 전체(VMware 범위) · tech
 ## 설치 (Ubuntu 22.04 bastion)
 
 ```bash
-git clone git@github.com:Heungryeol/brcm-docs.git ~/brcm-docs && cd ~/brcm-docs
+git clone git@github.com:Heungryeol/BRCM-docs.git ~/brcm-docs && cd ~/brcm-docs
 apt-get install -y python3-yaml python3-pypdf2 git
 ./brcm-docs doctor          # 사이트 접근·robots.txt·의존성 점검
 ```
